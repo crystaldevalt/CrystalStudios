@@ -8,9 +8,6 @@
 </head>
 <body>
 <div class="container">
-    <div style="text-align: right; padding: 10px;">
-        <button id="theme-toggle">Switch Theme</button>
-    </div>
     <header>
         <h1>CrystalStudios</h1>
         <p>Brought to you by CrystalDev!</p>
@@ -24,6 +21,7 @@
     <div style="text-align: center; margin-bottom: 40px;">
         <a href="servers.html" class="nav-button">View Sponsored Minecraft Servers</a>
     </div>
+
     <form id="requestForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -34,9 +32,6 @@
         <button type="submit">Submit Request</button>
     </form>
 </div>
-<script type="module">
-    import { initializeThemeToggle } from './theme.js';
-    initializeThemeToggle('theme-toggle');
-</script>
+<script src="script.js"></script>
 </body>
 </html>

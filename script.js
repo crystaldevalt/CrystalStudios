@@ -1,3 +1,12 @@
+import { initializeThemeToggle } from './theme.js';
+const toggleBtn = document.createElement('button');
+toggleBtn.id = 'theme-toggle';
+toggleBtn.innerText = 'Switch Theme';
+toggleBtn.style.marginBottom = '20px';
+toggleBtn.style.width = 'auto'; 
+const container = document.querySelector('.container');
+container.prepend(toggleBtn);
+initializeThemeToggle('theme-toggle');
 document.getElementById('requestForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const webhookUrl = 'https://discord.com/api/webhooks/1523724030908301485/Uq2lIWjh_FaJHqDAIVT6R-TitqEZDSnWDjG6iNamDrAx5GvFh8gekNTRgNHvffN5LpGW'; 
@@ -18,7 +27,6 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
-
         if (response.ok) {
             alert('Request sent successfully!');
             document.getElementById('requestForm').reset();
