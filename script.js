@@ -1,6 +1,20 @@
 import { initializeThemeToggle } from './theme.js';
 document.addEventListener('DOMContentLoaded', () => {
     initializeThemeToggle('theme-toggle');
+    const statusText = document.getElementById('status-text');
+    const statusIndicator = document.getElementById('status-indicator');
+    if (statusText && statusIndicator) {
+        fetch('status.json')
+            .then(response => response.json())
+            .then(data => {
+                statusText.innerText = data.message;
+                statusIndicator.className = data.status; 
+            })
+            .catch(err => {
+                statusText.innerText = "Status unavailable";
+                console.error("Error loading status:", err);
+            });
+    }
     const requestForm = document.getElementById('requestForm');
     if (requestForm) {
         requestForm.addEventListener('submit', async (e) => {
