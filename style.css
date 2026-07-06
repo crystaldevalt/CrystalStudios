@@ -35,6 +35,10 @@ body {
     border: 1px solid var(--border-color);
 }
 header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
+#status-container { font-weight: bold; color: var(--text-primary); }
+#status-indicator { color: gray; margin-right: 5px; }
+.online { color: #48bb78 !important; }
+.busy { color: #f56565 !important; }  
 .nav-button, .server-btn, button { 
     display: inline-block;
     padding: 15px; 
