@@ -1,12 +1,5 @@
 import { initializeThemeToggle } from './theme.js';
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.createElement('button');
-    toggleBtn.id = 'theme-toggle';
-    toggleBtn.innerText = 'Switch Theme';
-    toggleBtn.style.marginTop = '40px'; 
-    toggleBtn.style.width = '100%';
-    const container = document.querySelector('.container');
-    container.append(toggleBtn);
     initializeThemeToggle('theme-toggle');
     const requestForm = document.getElementById('requestForm');
     if (requestForm) {
@@ -30,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-
                 if (response.ok) {
                     alert('Request sent successfully!');
                     requestForm.reset();
