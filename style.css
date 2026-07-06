@@ -2,18 +2,29 @@
     --bg-main: #1a1c1e;
     --bg-container: #25282c;
     --text-primary: #e2e8f0;
-    --accent-purple: #805ad5;
+    --accent-color: #805ad5;
     --accent-light: #b794f4;
     --accent-lighter: #d6bcfa;
     --border-color: #4a5568;
     --btn-hover: #6b46c1;
+}
+body.light-mode {
+    --bg-main: #ffffff;
+    --bg-container: #f8fafc;
+    --text-primary: #1a202c;
+    --accent-color: #3182ce;
+    --accent-light: #63b3ed;
+    --accent-lighter: #2b6cb0;
+    --border-color: #cbd5e0;
+    --btn-hover: #2c5282;
 }
 body { 
     font-family: 'Segoe UI', sans-serif; 
     margin: 0; 
     padding: 20px; 
     background-color: var(--bg-main);
-    color: var(--text-primary); 
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
 }
 .container { 
     max-width: 900px; 
@@ -21,13 +32,13 @@ body {
     background: var(--bg-container); 
     padding: 30px; 
     border-radius: 12px; 
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
 }
 header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
 .nav-button, .server-btn, button { 
     display: inline-block;
     padding: 15px; 
-    background: var(--accent-purple);
+    background: var(--accent-color);
     color: white; 
     border: none; 
     border-radius: 6px; 
@@ -40,8 +51,6 @@ header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
 .nav-button:hover, .server-btn:hover, button:hover { 
     background: var(--btn-hover); 
 }
-
-/* Features & Server Cards */
 .features, .servers { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -53,13 +62,13 @@ header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
     padding: 15px; 
     border-radius: 8px; 
     text-align: center; 
-    border: 1px solid var(--accent-purple);
+    border: 1px solid var(--accent-color);
     color: var(--accent-lighter);
 }
-.server-card h4 { margin-top: 0; color: white; }
+.server-card h4 { margin-top: 0; color: var(--text-primary); }
 .server-card code { 
     display: block; 
-    background: var(--bg-container); 
+    background: var(--bg-container);
     padding: 5px; 
     border-radius: 4px; 
     margin: 10px 0; 
@@ -73,7 +82,7 @@ input, textarea {
     background: var(--bg-main); 
     border: 1px solid var(--border-color); 
     border-radius: 6px; 
-    color: white; 
+    color: var(--text-primary); 
     box-sizing: border-box;
 }
 button { width: 100%; margin-top: 20px; }
