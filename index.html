@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrystalStudios | Development Requests</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header { text-align: center; margin-bottom: 30px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .box { background: #e0e7ff; padding: 15px; border-radius: 6px; text-align: center; border: 1px solid #c7d2fe; }
+        form { display: flex; flex-direction: column; }
+        label { margin-top: 10px; font-weight: bold; }
+        input, textarea { padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        button { margin-top: 20px; padding: 12px; background: #4f46e5; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #4338ca; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>CrystalStudios</h1>
+        <p>Bringing your digital visions to life. Tell us what you need.</p>
+    </header>
+    <div class="features">
+        <div class="box"><h3>Quality</h3><p>High-end, reliable code structure.</p></div>
+        <div class="box"><h3>Speed</h3><p>Fast turnaround for your projects.</p></div>
+        <div class="box"><h3>Support</h3><p>Dedicated help post-launch.</p></div>
+        <div class="box"><h3>Custom</h3><p>Solutions built just for you.</p></div>
+    </div>
+    <form id="requestForm">
+        <h2>Submit a Request</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="description">What do you need developed?</label>
+        <textarea id="description" name="description" rows="5" required></textarea>
+        <button type="submit">Send Request</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('requestForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const webhookUrl = 'https://discord.com/api/webhooks/1523724030908301485/Uq2lIWjh_FaJHqDAIVT6R-TitqEZDSnWDjG6iNamDrAx5GvFh8gekNTRgNHvffN5LpGW'; 
+            const payload = {
+            embeds: [{
+                title: "New Development Request!",
+                color: 5814783,
+                fields: [
+                    { name: "Name", value: document.getElementById('name').value },
+                    { name: "Email", value: document.getElementById('email').value },
+                    { name: "Description", value: document.getElementById('description').value }
+                ]
+            }]
+        };
+        try {
+            const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (response.ok) {
+                alert('Request sent successfully!');
+                document.getElementById('requestForm').reset();
+            } else {
+                alert('Error sending request. Please check your Webhook URL.');
+            }
+        } catch (error) {
+            alert('Error: ' + error.message);
+        }
+    });
+</script>
+
+</body>
+</html>
