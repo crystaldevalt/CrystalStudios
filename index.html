@@ -4,64 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrystalStudios | Development</title>
-    <style>
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            padding: 20px; 
-            background-color: #1a1c1e;
-            color: #e2e8f0; 
-        }
-        .container { 
-            max-width: 800px; 
-            margin: auto; 
-            background: #25282c;
-            padding: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-        }
-        header { text-align: center; margin-bottom: 30px; color: #b794f4; }
-        h1 { margin: 0; font-size: 2.5em; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
-        .box { 
-            background: #1a1c1e; 
-            padding: 15px; 
-            border-radius: 8px; 
-            text-align: center; 
-            border: 1px solid #805ad5;
-            color: #d6bcfa;
-        }
-      
-        .box a {
-            color: #b794f4;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        .box a:hover { color: #d6bcfa; }
-        form { display: flex; flex-direction: column; }
-        label { margin-top: 10px; font-weight: bold; color: #b794f4; }
-        input, textarea { 
-            padding: 12px; 
-            margin-top: 5px; 
-            background: #1a1c1e; 
-            border: 1px solid #4a5568; 
-            border-radius: 6px; 
-            color: white; 
-        }
-        button { 
-            margin-top: 20px; 
-            padding: 15px; 
-            background: #805ad5;
-            color: white; 
-            border: none; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        button:hover { background: #6b46c1; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
@@ -71,13 +14,14 @@
     </header>
     <div class="features">
         <div class="box"><h3>Quality</h3><p>Reliable code made just for you!</p></div>
-        <div class="box"><h3>Speed</h3><p>Devlivered quickly!</p></div>
-        <div class="box">
-            <h3>Discord</h3>
-            <p><a href="https://discord.gg/kmEa5FRuRU" target="_blank" rel="noopener noreferrer">Click here to join!</a></p>
-        </div>
+        <div class="box"><h3>Speed</h3><p>Delivered quickly!</p></div>
+        <div class="box"><h3>Support</h3><p><a href="https://discord.gg/kmEa5FRuRU" target="_blank" rel="noopener noreferrer">Click here to join!</a></p></div>
         <div class="box"><h3>Easy</h3><p>and affordable solutions.</p></div>
     </div>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <a href="servers.html" class="nav-button">View Sponsored Minecraft Servers</a>
+    </div>
+
     <form id="requestForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -88,35 +32,6 @@
         <button type="submit">Submit Request</button>
     </form>
 </div>
-<script>
-    document.getElementById('requestForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const webhookUrl = 'https://discord.com/api/webhooks/1523724030908301485/Uq2lIWjh_FaJHqDAIVT6R-TitqEZDSnWDjG6iNamDrAx5GvFh8gekNTRgNHvffN5LpGW'; 
-
-        const payload = {
-            embeds: [{
-                title: "New Development Request!",
-                color: 8415701, 
-                fields: [
-                    { name: "Name", value: document.getElementById('name').value },
-                    { name: "Email", value: document.getElementById('email').value },
-                    { name: "Description", value: document.getElementById('description').value }
-                ]
-            }]
-        };
-        const response = await fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        if (response.ok) {
-            alert('Request sent successfully!');
-            document.getElementById('requestForm').reset();
-        } else {
-            alert('Something went wrong. Please check your Webhook URL.');
-        }
-    });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
