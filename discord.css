@@ -12,15 +12,9 @@
     justify-content: center !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     z-index: 9999 !important;
-    transition: transform 0.3s ease, background-color 0.3s ease !important;
-    cursor: pointer !important;
+    transition: transform 0.3s ease !important;
 }
 
 .floating-discord:hover {
-    transform: scale(1.15) rotate(10deg) !important;
-    background-color: #4752c4 !important;
-}
-
-.floating-discord svg {
-    pointer-events: none; 
+    transform: scale(1.1) !important;
 }
