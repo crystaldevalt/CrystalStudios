@@ -3,7 +3,6 @@ a.floating-discord {
     bottom: 30px !important;
     right: 30px !important;
     background-color: #5865F2 !important;
-    color: white !important;
     width: 60px !important;
     height: 60px !important;
     border-radius: 50% !important;
@@ -12,19 +11,19 @@ a.floating-discord {
     justify-content: center !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     z-index: 9999 !important;
-    transition: transform 0.3s ease !important;
-    padding: 0 !important; /* Fixes potential 'white thing' or sizing issues */
-    border: none !important;
+    padding: 0 !important;
+    border-style: none !important;
+    text-decoration: none !important;
+}
+
+a.floating-discord svg {
+    display: block !important;
+    width: 30px !important;
+    height: 30px !important;
+    fill: white !important;
+    pointer-events: none !important;
 }
 
 a.floating-discord:hover {
-    transform: scale(1.1) !important;
-}
-
-/* Forces the SVG to fit the button without extra padding/spacing */
-a.floating-discord svg {
-    display: block !important;
-    pointer-events: none !important;
-    width: 30px !important;
-    height: 30px !important;
+    transform: scale(1.1) rotate(10deg) !important;
 }
