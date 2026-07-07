@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 :root {
-    --font-main: 'Inter', sans-serif;
     --bg-main: #1a1c1e;
     --bg-container: #25282c;
     --text-primary: #e2e8f0;
@@ -21,7 +19,7 @@ body.light-mode {
     --btn-hover: #2c5282;
 }
 body { 
-    font-family: var(--font-main); 
+    font-family: 'Segoe UI', sans-serif; 
     margin: 0; 
     padding: 20px; 
     background-color: var(--bg-main);
@@ -36,3 +34,76 @@ body {
     border-radius: 12px; 
     border: 1px solid var(--border-color);
 }
+header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
+#status-container { font-weight: bold; color: var(--text-primary); }
+#status-indicator { 
+    color: gray; 
+    margin-right: 5px; 
+    display: inline-block; 
+    transition: transform 0.3s ease;
+}
+#status-indicator:hover { transform: scale(1.3); }
+.online { color: #48bb78 !important; }
+.busy { color: #f56565 !important; }
+.nav-button, .server-btn, button { 
+    display: inline-block;
+    padding: 15px; 
+    background: var(--accent-color);
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-decoration: none;
+    transition: background 0.3s, transform 0.1s;
+    text-align: center;
+}
+.nav-button:hover, .server-btn:hover, button:hover { background: var(--btn-hover); }
+.nav-button:active, .server-btn:active, button:active { transform: scale(0.98); }
+.features, .servers { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin-bottom: 40px; 
+}
+.box, .server-card { 
+    background: var(--bg-main); 
+    padding: 15px; 
+    border-radius: 8px; 
+    text-align: center; 
+    border: 1px solid var(--accent-color);
+    color: var(--accent-lighter);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.box:hover, .server-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-light);
+}
+.server-card h4 { margin-top: 0; color: var(--text-primary); }
+.server-card code { 
+    display: block; 
+    background: var(--bg-container);
+    padding: 5px; 
+    border-radius: 4px; 
+    margin: 10px 0; 
+    font-family: monospace;
+}
+label { color: var(--accent-light); font-weight: bold; display: block; margin-top: 10px; }
+input, textarea { 
+    width: 100%;
+    padding: 12px; 
+    margin-top: 5px;
+    background: var(--bg-main); 
+    border: 1px solid var(--border-color); 
+    border-radius: 6px; 
+    color: var(--text-primary); 
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+input:focus, textarea:focus { 
+    outline: none; 
+    border-color: var(--accent-light); 
+    box-shadow: 0 0 0 2px var(--accent-color); 
+}
+button { width: 100%; margin-top: 20px; }
