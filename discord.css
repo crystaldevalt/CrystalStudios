@@ -14,6 +14,8 @@ a.floating-discord {
     padding: 0 !important;
     border-style: none !important;
     text-decoration: none !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
 }
 
 a.floating-discord svg {
@@ -22,8 +24,10 @@ a.floating-discord svg {
     height: 30px !important;
     fill: white !important;
     pointer-events: none !important;
+    margin: auto !important;
 }
 
 a.floating-discord:hover {
     transform: scale(1.1) rotate(10deg) !important;
+    background-color: #4752c4 !important;
 }
