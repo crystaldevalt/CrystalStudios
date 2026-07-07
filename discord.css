@@ -1,0 +1,26 @@
+.floating-discord {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    background-color: #5865F2 !important;
+    color: white !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    z-index: 9999 !important;
+    transition: transform 0.3s ease, background-color 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.floating-discord:hover {
+    transform: scale(1.15) rotate(10deg) !important;
+    background-color: #4752c4 !important;
+}
+
+.floating-discord svg {
+    pointer-events: none; 
+}
