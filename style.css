@@ -24,24 +24,18 @@ body {
     font-family: 'Segoe UI', sans-serif; 
     margin: 0; 
     padding: 20px; 
-    background: radial-gradient(circle at top, #2d2d35, #1a1c1e);
+    background-color: var(--bg-main);
     color: var(--text-primary);
     transition: background-color 0.3s, color 0.3s;
-    min-height: 100vh;
-}
-
-body.light-mode {
-    background: #ffffff;
 }
 
 .container { 
     max-width: 900px; 
     margin: auto; 
-    background: var(--bg-container); 
+    background: var(--bg-container);
     padding: 30px; 
     border-radius: 12px; 
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
@@ -64,8 +58,8 @@ header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
 .online { color: #48bb78 !important; }
 .busy { color: #f56565 !important; }
 
-/* Fixed: Use specific classes for buttons to avoid impacting the theme toggle */
-.nav-button, .server-btn { 
+/* Buttons kept original but with added hover-glow */
+.nav-button, .server-btn, button { 
     display: inline-block;
     padding: 15px; 
     background: var(--accent-color);
@@ -77,16 +71,14 @@ header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
     text-decoration: none;
     transition: background 0.3s, transform 0.1s;
     text-align: center;
-    width: 100%;
-    margin-top: 20px;
 }
 
-.nav-button:hover, .server-btn:hover { 
+.nav-button:hover, .server-btn:hover, button:hover { 
     background: var(--btn-hover); 
     box-shadow: 0 0 15px var(--accent-color);
 }
 
-.nav-button:active, .server-btn:active { transform: scale(0.98); }
+.nav-button:active, .server-btn:active, button:active { transform: scale(0.98); }
 
 .features, .servers { 
     display: grid; 
@@ -106,19 +98,112 @@ header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
 }
 
 .box:hover, .server-card:hover { 
-    transform: translateY(-10px) scale(1.02); 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     border-color: var(--accent-light);
+}
+
+.server-card h4 { margin-top: 0; color: var(--text-primary); }
+
+.server-card code { 
+    display: block; 
+    background: var(--bg-container);
+    padding: 5px; 
+    border-radius: 4px; 
+    margin: 10px 0; 
+    font-family: monospace;
 }
 
 label { color: var(--accent-light); font-weight: bold; display: block; margin-top: 10px; }
 
-/* Fixed: Input styles will not affect the toggle checkbox */
-input[type="text"], input[type="email"], textarea { 
+input, textarea { 
     width: 100%;
     padding: 12px; 
     margin-top: 5px;
     background: var(--bg-main); 
     border: 1px solid var(--border-color); 
-    border-radius: 6px
+    border-radius: 6px; 
+    color: var(--text-primary); 
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus { 
+    outline: none; 
+    border-color: var(--accent-light); 
+    box-shadow: 0 0 0 2px var(--accent-color); 
+}
+
+button { width: 100%; margin-top: 20px; }
+
+.discord-btn {
+    background-color: #ff007f !important;
+    color: white !important;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.discord-btn:hover {
+    background-color: #d6006a !important;
+}
+
+/* Floating Discord Button */
+.floating-discord {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #5865F2;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 1000;
+}
+
+.floating-discord:hover {
+    transform: scale(1.1) rotate(10deg);
+    background-color: #4752c4;
+}
+
+/* Theme Toggle Switch Styling */
+.switch-container {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    position: relative;
+}
+.switch-container input { display: none; }
+.slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ca51e8;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px; bottom: 4px;
+    background-color: #333333;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+body.light-mode .slider {
+    background-color: #3182ce;
+}
+body.light-mode .slider::before {
+    background-color: #333333;
+    transform: translateX(30px);
 }
