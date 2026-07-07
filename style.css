@@ -107,3 +107,16 @@ input:focus, textarea:focus {
     box-shadow: 0 0 0 2px var(--accent-color); 
 }
 button { width: 100%; margin-top: 20px; }
+.discord-btn {
+    background-color: #ff007f !important;
+    color: white !important;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.discord-btn:hover {
+    background-color: #d6006a !important;
+}
