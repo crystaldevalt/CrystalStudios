@@ -1,4 +1,4 @@
-.floating-discord {
+a.floating-discord {
     position: fixed !important;
     bottom: 30px !important;
     right: 30px !important;
@@ -13,8 +13,18 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     z-index: 9999 !important;
     transition: transform 0.3s ease !important;
+    padding: 0 !important; /* Fixes potential 'white thing' or sizing issues */
+    border: none !important;
 }
 
-.floating-discord:hover {
+a.floating-discord:hover {
     transform: scale(1.1) !important;
+}
+
+/* Forces the SVG to fit the button without extra padding/spacing */
+a.floating-discord svg {
+    display: block !important;
+    pointer-events: none !important;
+    width: 30px !important;
+    height: 30px !important;
 }
