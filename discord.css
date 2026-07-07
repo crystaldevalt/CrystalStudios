@@ -14,20 +14,24 @@ a.floating-discord {
     padding: 0 !important;
     border-style: none !important;
     text-decoration: none !important;
-    cursor: pointer !important;
-    overflow: hidden !important;
+}
+
+.discord-icon-wrapper {
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 a.floating-discord svg {
-    display: block !important;
-    width: 30px !important;
-    height: 30px !important;
+    width: 100% !important;
+    height: 100% !important;
     fill: white !important;
     pointer-events: none !important;
-    margin: auto !important;
 }
 
 a.floating-discord:hover {
-    transform: scale(1.1) rotate(10deg) !important;
+    transform: scale(1.1) !important;
     background-color: #4752c4 !important;
 }
