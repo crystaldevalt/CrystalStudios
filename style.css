@@ -120,3 +120,35 @@ button { width: 100%; margin-top: 20px; }
 .discord-btn:hover {
     background-color: #d6006a !important;
 }
+.switch-container {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    position: relative;
+}
+.switch-container input { display: none; }
+.slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ca51e8;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px; bottom: 4px;
+    background-color: #3182ce; /* Blue Circle */
+    border-radius: 50%;
+    transition: 0.4s;
+}
+body.light-mode .slider {
+    background-color: #3182ce;
+}
+body.light-mode .slider::before {
+    background-color: #ca51e8;
+    transform: translateX(30px);
+}
