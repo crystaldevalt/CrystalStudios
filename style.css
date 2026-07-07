@@ -206,4 +206,23 @@ body.light-mode .slider {
 body.light-mode .slider::before {
     background-color: #333333;
     transform: translateX(30px);
+.floating-discord {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    background-color: #5865F2 !important;
+    color: white !important;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+    z-index: 9999 !important;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.floating-discord:hover {
+    transform: scale(1.1) rotate(10deg);
+    background-color: #4752c4;
 }
