@@ -46,9 +46,12 @@ header h1 {
 
 /* Typewriter Styles */
 #typewriter-text {
-    color: var(--text-primary);
     font-size: 1.1rem;
     min-height: 1.5em;
+}
+
+.typed-text {
+    color: var(--text-primary);
 }
 
 #typewriter-text::after {
@@ -171,5 +174,3 @@ header h1 {
     margin: 30px 0;
     width: 100%;
 }
-
-
