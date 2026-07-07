@@ -1,19 +1,9 @@
 // effects.js
+alert("Script is loading!"); // This will pop up a box on your phone if it works
 
-async function typeWriter(text, elementId, speed = 100) {
-    const element = document.getElementById(elementId);
-    let i = 0;
-    
-    element.textContent = "";
-
-    while (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
-        await new Promise(resolve => setTimeout(resolve, speed));
-    }
+const element = document.getElementById("typewriter-text");
+if (element) {
+    element.textContent = "Test worked!";
+} else {
+    alert("Element not found!");
 }
-
-// Start the effect
-document.addEventListener("DOMContentLoaded", () => {
-    typeWriter("Brought to you by CrystalDev!", "typewriter-text", 80);
-});
