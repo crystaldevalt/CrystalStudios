@@ -22,17 +22,23 @@ body {
     font-family: 'Segoe UI', sans-serif; 
     margin: 0; 
     padding: 20px; 
-    background-color: var(--bg-main);
+    background: radial-gradient(circle at top, #2d2d35, #1a1c1e);
+    background-attachment: fixed;
     color: var(--text-primary);
     transition: background-color 0.3s, color 0.3s;
+}
+body.light-mode {
+    background: #ffffff;
 }
 .container { 
     max-width: 900px; 
     margin: auto; 
-    background: var(--bg-container);
+    background: rgba(37, 40, 44, 0.7); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 30px; 
     border-radius: 12px; 
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 header { text-align: center; margin-bottom: 30px; color: var(--accent-light); }
 #status-container { font-weight: bold; color: var(--text-primary); }
@@ -131,7 +137,7 @@ button { width: 100%; margin-top: 20px; }
 .slider {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ca51e8; /* Purple Background */
+    background-color: #ca51e8;
     border-radius: 30px;
     transition: 0.4s;
 }
