@@ -131,7 +131,7 @@ button { width: 100%; margin-top: 20px; }
 .slider {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ca51e8;
+    background-color: #ca51e8; /* Purple Background */
     border-radius: 30px;
     transition: 0.4s;
 }
@@ -141,7 +141,7 @@ button { width: 100%; margin-top: 20px; }
     height: 22px;
     width: 22px;
     left: 4px; bottom: 4px;
-    background-color: #3182ce; /* Blue Circle */
+    background-color: #333333;
     border-radius: 50%;
     transition: 0.4s;
 }
@@ -149,6 +149,6 @@ body.light-mode .slider {
     background-color: #3182ce;
 }
 body.light-mode .slider::before {
-    background-color: #ca51e8;
+    background-color: #333333;
     transform: translateX(30px);
 }
