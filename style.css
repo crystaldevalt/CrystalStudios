@@ -2,11 +2,11 @@
     --bg-main: #1a1c1e;
     --bg-container: #25282c;
     --text-primary: #e2e8f0;
-    --accent-color: #805ad5;
-    --accent-light: #b794f4;
-    --accent-lighter: #d6bcfa;
+    --accent-color: #ca51e8;
+    --accent-light: #d883ed;
+    --accent-lighter: #e7b5f3;
     --border-color: #4a5568;
-    --btn-hover: #6b46c1;
+    --btn-hover: #a338bd;
 }
 body.light-mode {
     --bg-main: #ffffff;
