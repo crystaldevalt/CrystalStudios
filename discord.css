@@ -16,22 +16,15 @@ a.floating-discord {
     text-decoration: none !important;
 }
 
-.discord-icon-wrapper {
-    width: 32px !important;
-    height: 32px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
 a.floating-discord svg {
-    width: 100% !important;
-    height: 100% !important;
-    fill: white !important;
+    display: block !important;
+    width: 35px !important; /* Slightly smaller than the button for better look */
+    height: 35px !important;
+    fill: #ffffff !important; /* Force white */
     pointer-events: none !important;
 }
 
 a.floating-discord:hover {
-    transform: scale(1.1) !important;
+    transform: scale(1.1) rotate(10deg) !important;
     background-color: #4752c4 !important;
 }
