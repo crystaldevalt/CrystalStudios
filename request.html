@@ -58,6 +58,20 @@
     <br>
     <a href="index.html" style="color: var(--accent-light); text-decoration: none;">← Back to Home</a>
 </div>
+<script>
+    // Fade out when clicking links
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('http')) return; // Ignore external links
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); // 500ms matches the transition
+        });
+    });
+</script>
 </body>
 </html>
 
