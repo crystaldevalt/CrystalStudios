@@ -65,7 +65,10 @@ p { line-height: 1.6; color: #e2e8f0; }
 body.light-theme { background: #eef7ff !important; color: #121418 !important; }
 body.light-theme .container { background: rgba(255, 255, 255, 0.8) !important; border: 1px solid rgba(139, 59, 160, 0.2) !important; }
 body.light-theme .box { background: rgba(0, 0, 0, 0.05) !important; border: 1px solid rgba(0, 0, 0, 0.1) !important; }
-body.light-theme .box p { color: #334155 !important; text-shadow: none !important; }
+/* Added .features for specificity to override global glowy text */
+body.light-theme .features .box p { color: #334155 !important; text-shadow: none !important; }
+/* Ensure TOS page text also updates */
+body.light-theme .container .box p { color: #334155 !important; text-shadow: none !important; }
 body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shadow: none !important; }
 
 /* --- Components --- */
