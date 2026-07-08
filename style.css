@@ -177,5 +177,10 @@ body.light-theme .theme-label {
     color: var(--accent-light) !important;
     text-shadow: 0 0 8px rgba(202, 81, 232, 0.5);
 }
+/* Update feature headers to match main site accent */
+.features .box h3 {
+    color: var(--accent-light);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
 
 
