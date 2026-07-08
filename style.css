@@ -127,10 +127,12 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 /* --- Lighter, Glassy, and Glowy feature descriptions --- */
 .features .box p {
-    color: #e0a3f0 !important; /* Lighter purple */
-    text-shadow: 0 0 8px rgba(202, 81, 232, 0.4); /* Soft glow */
-    background: rgba(255, 255, 255, 0.03); /* Slight glassy base */
-    padding: 5px;
-    border-radius: 8px;
+    color: #f4d0ff !important; /* Brighter, lighter purple */
+    text-shadow: 0 0 10px rgba(202, 81, 232, 0.8), 0 0 20px rgba(202, 81, 232, 0.4); /* Stronger glow */
+    background: rgba(255, 255, 255, 0.08) !important; /* Stronger glass tint */
+    backdrop-filter: blur(5px); /* This creates the actual "glass" blur effect */
+    padding: 10px !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle glass edge */
+    margin-top: 10px;
 }
-
