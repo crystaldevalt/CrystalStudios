@@ -8,7 +8,6 @@
     --text-color: #ffffff;
 }
 
-/* --- Basic Reset --- */
 body {
     background-color: var(--bg-main);
     color: var(--text-color);
@@ -19,11 +18,9 @@ body {
     justify-content: center;
 }
 
-/* --- Glassmorphism Containers --- */
 .container {
     background: var(--bg-container) !important;
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: 1px solid var(--border-color) !important;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border-radius: 16px !important;
@@ -32,28 +29,22 @@ body {
     width: 100%;
 }
 
-.box {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 12px !important;
-    padding: 15px;
+/* --- Centering Everything --- */
+header, #status-container, .text-center {
     text-align: center;
 }
 
-/* --- Typography --- */
-h1, h2, h3 {
-    color: var(--accent-light);
-    letter-spacing: 0.5px;
-    text-align: center;
-    margin-top: 0;
+h1, h2, h3 { color: var(--accent-light); letter-spacing: 0.5px; margin-top: 0; }
+p { line-height: 1.6; color: #e2e8f0; }
+
+/* --- Typewriter Fixes --- */
+#typewriter-text {
+    min-height: 24px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
-p {
-    line-height: 1.6;
-    color: #e2e8f0;
-}
-
-/* --- Typewriter Cursor Fix --- */
 .typed-text::after {
     content: '|';
     animation: blink 1s infinite;
@@ -61,52 +52,9 @@ p {
     margin-left: 2px;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- Modern Inputs --- */
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 2px solid transparent !important;
-    border-radius: 10px !important;
-    color: white;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
-input:focus, textarea:focus {
-    border-color: var(--accent-light) !important;
-    outline: none;
-    background: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* --- Modern Pill Buttons --- */
-.nav-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: var(--accent-light);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px !important;
-    transition: transform 0.2s, box-shadow 0.3s;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.nav-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(202, 81, 232, 0.4);
-}
-
-/* --- Layout Fixes --- */
+/* --- Features Grid --- */
 .features {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -114,15 +62,37 @@ input:focus, textarea:focus {
     margin: 20px 0;
 }
 
-.text-center { text-align: center; margin: 15px 0; }
-
-.switch-container {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+.box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 15px;
 }
 
-/* --- Utility --- */
-a { color: var(--accent-light); text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* --- Theme Toggle Switch Fix --- */
+.switch-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+}
+
+/* --- Buttons & Links --- */
+.nav-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--accent-light);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px !important;
+    transition: transform 0.2s;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.nav-button:hover { transform: translateY(-3px); }
+.tos-link { color: var(--accent-light); text-decoration: underline; font-size: 0.8em; }
