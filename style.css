@@ -108,3 +108,45 @@ p { line-height: 1.6; color: #e2e8f0; }
 /* --- Utilities --- */
 ::selection { background: #ca51e8; color: #fff; }
 input:focus, textarea:focus { outline: none; border: 1px solid #ca51e8 !important; box-shadow: 0 0 10px rgba(202, 81, 232, 0.5); background: rgba(255, 255, 255, 0.1) !important; }
+/* --- Fix: Prevent boxes from going pure white in light mode --- */
+body.light-theme .box {
+    background: rgba(0, 0, 0, 0.05) !important; /* Very light grey, not pure white */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .features .box p {
+    color: #334155 !important; /* Dark text for readability */
+    text-shadow: none; /* Glow looks bad on white, turn it off */
+}
+/* --- Fix: Ensure the Toggle Switch styling is applied --- */
+.switch-container { 
+    position: relative; 
+    display: inline-block; 
+    width: 50px; 
+    height: 24px; 
+    vertical-align: middle; 
+}
+
+#theme-toggle { opacity: 0; width: 0; height: 0; }
+
+.slider { 
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
+    background-color: #4a4a4a; transition: 0.4s; border-radius: 34px; 
+}
+
+.slider:before { 
+    position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; 
+    background-color: white; transition: 0.4s; border-radius: 50%; 
+}
+
+#theme-toggle:checked + .slider { background-color: var(--accent-light); }
+#theme-toggle:checked + .slider:before { transform: translateX(26px); }
+
+/* --- Fix: Restore Toggle Label Color --- */
+.theme-label { 
+    display: block; 
+    margin-top: 8px; 
+    color: var(--accent-light); /* Restored color */
+    font-weight: 600; 
+    font-size: 0.9em; 
+}
