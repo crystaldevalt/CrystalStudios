@@ -145,5 +145,14 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 
 .floating-discord svg { width: 30px; height: 30px; }
+#theme-toggle {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    z-index: 100 !important;
+    /* Ensure it's large enough to tap on mobile */
+    width: 40px !important;
+    height: 40px !important;
+    appearance: auto !important; 
+}
 
 
