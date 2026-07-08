@@ -1,14 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Theme Toggle Logic (Integrated) ---
+    // --- 1. Typewriter ---
+    async function typeWriter(text, elementId, speed = 80) {
+        const element = document.querySelector("#" + elementId + " .typed-text");
+        if (!element) return;
+        element.textContent = "";
+        for (let i = 0; i < text.length; i++) {
+            element.textContent += text.charAt(i);
+            await new Promise(r => setTimeout(r, speed));
+        }
+    }
+    typeWriter("Brought to you by CrystalDev!", "typewriter-text", 80);
+
+    // --- 2. Theme Toggle ---
     const toggle = document.getElementById('theme-toggle');
-    
-    // Apply saved theme on load
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-theme');
         if (toggle) toggle.checked = true;
     }
-
-    // Toggle event
     if (toggle) {
         toggle.addEventListener('change', () => {
             document.body.classList.toggle('light-theme');
@@ -16,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Status fetch logic ---
+    // --- 3. Status ---
     const statusText = document.getElementById('status-text');
     const statusIndicator = document.getElementById('status-indicator');
     if (statusText && statusIndicator) {
@@ -28,11 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(err => {
                 statusText.innerText = "Status unavailable";
-                console.error("Error loading status:", err);
             });
     }
 
-    // --- 3. Form submission logic ---
+    // --- 4. Form ---
     const requestForm = document.getElementById('requestForm');
     if (requestForm) {
         requestForm.addEventListener('submit', async (e) => {
@@ -59,11 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Request sent successfully!');
                     requestForm.reset();
                 } else {
-                    alert('Something went wrong. Please check your Webhook URL.');
+                    alert('Error sending request.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Failed to send request. Check your internet connection.');
             }
         });
     }
