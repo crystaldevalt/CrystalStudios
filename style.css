@@ -125,7 +125,12 @@ p { line-height: 1.6; color: #e2e8f0; }
     color: #ca51e8 !important;
     text-shadow: 0 0 10px rgba(202, 81, 232, 0.6) !important;
 }
-/* --- Color for feature box descriptions --- */
+/* --- Lighter, Glassy, and Glowy feature descriptions --- */
 .features .box p {
-    color: var(--accent-light) !important;
+    color: #e0a3f0 !important; /* Lighter purple */
+    text-shadow: 0 0 8px rgba(202, 81, 232, 0.4); /* Soft glow */
+    background: rgba(255, 255, 255, 0.03); /* Slight glassy base */
+    padding: 5px;
+    border-radius: 8px;
 }
+
