@@ -135,3 +135,14 @@ p { line-height: 1.6; color: #e2e8f0; }
     padding: 0 !important;               /* Removes the extra spacing */
     margin-top: 10px;
 }
+/* --- Subtle Fade-In Transition --- */
+body {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
