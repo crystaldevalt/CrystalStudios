@@ -27,13 +27,28 @@ body.light-theme {
 }
 
 body.light-theme .container {
-    background: rgba(255, 255, 255, 0.8) !important;
-    border: 1px solid #cce5ff !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(139, 59, 160, 0.2) !important;
+    box-shadow: 0 8px 32px 0 rgba(139, 59, 160, 0.1);
 }
 
-body.light-theme p, 
+body.light-theme p { color: #334155 !important; }
+
 body.light-theme h1, 
-body.light-theme h3 { color: #121418 !important; }
+body.light-theme h3 { 
+    color: #8b3ba0 !important; 
+    text-shadow: 0 0 5px rgba(139, 59, 160, 0.2);
+}
+
+body.light-theme .box {
+    background: rgba(219, 234, 254, 0.6) !important;
+    border: 1px solid rgba(191, 219, 254, 0.8) !important;
+}
+
+body.light-theme .box:hover {
+    box-shadow: 0 0 15px rgba(139, 59, 160, 0.3);
+    border-color: #8b3ba0 !important;
+}
 
 /* --- Glassy Container --- */
 .container {
