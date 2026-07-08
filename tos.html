@@ -8,39 +8,33 @@
 </head>
 <body>
 <div class="container">
-    <h1 style="color: var(--accent-light);">Terms of Service</h1>
+    <h1>Terms of Service</h1>
     
-    <div style="background: #25282c; padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); color: #e2e8f0; line-height: 1.6;">
-        <h3 style="color: var(--accent-light);">1. Payment</h3>
+    <div class="box">
+        <h3>1. Payment</h3>
         <p>All payments must be made via <strong>CashApp</strong>. We do not begin work until payment or a partial deposit is confirmed.</p>
+    </div>
         
-        <h3 style="color: var(--accent-light);">2. Refunds</h3>
+    <div class="box">
+        <h3>2. Refunds</h3>
         <p>Refunds are handled on a case-by-case basis. If you are unsatisfied, please reach out to us via Discord so we can resolve the issue.</p>
+    </div>
         
-        <h3 style="color: var(--accent-light);">3. Delivery & Usage</h3>
+    <div class="box">
+        <h3>3. Delivery & Usage</h3>
         <p>All code/assets delivered are for your personal or commercial use as discussed during the request phase. We reserve the right to showcase our work in our portfolio.</p>
+    </div>
         
-        <h3 style="color: var(--accent-light);">4. Support</h3>
+    <div class="box">
+        <h3>4. Support</h3>
         <p>We provide support for bugs or issues identified within 7 days of the final delivery.</p>
     </div>
 
-    <div style="text-align: center; margin-top: 30px;">
+    <div class="text-center" style="margin-top: 30px;">
         <a href="index.html" class="nav-button">Back to Home</a>
     </div>
 </div>
-<script>
-    // Fade out when clicking links
-    document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.getAttribute('href').startsWith('http')) return; // Ignore external links
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                window.location.href = href;
-            }, 500); // 500ms matches the transition
-        });
-    });
-</script>
+
+<script src="script.js"></script>
 </body>
 </html>

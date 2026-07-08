@@ -162,3 +162,22 @@ body.light-theme .features .box p {
     text-decoration: underline;
     opacity: 0.8;
 }
+.box {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 15px !important;
+    padding: 20px;
+    transition: 0.3s ease;
+    /* ... rest of your existing .box styles */
+}
+/* Ensure boxes on other pages are visible */
+.box {
+    opacity: 1 !important;
+    margin-bottom: 15px; /* Adds space between the boxes */
+}
+
+/* Optional: Make them look even more like the homepage glow */
+.box p {
+    color: #f4d0ff !important;
+    text-shadow: 0 0 10px rgba(202, 81, 232, 0.8);
+}
