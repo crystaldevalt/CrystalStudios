@@ -20,7 +20,7 @@ body {
 }
 
 /* --- Glassmorphism Containers --- */
-.container, .pricing-container, .box {
+.container {
     background: var(--bg-container) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -30,7 +30,14 @@ body {
     padding: 25px;
     max-width: 600px;
     width: 100%;
-    margin: 10px 0;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 15px;
+    text-align: center;
 }
 
 /* --- Typography --- */
@@ -44,6 +51,19 @@ h1, h2, h3 {
 p {
     line-height: 1.6;
     color: #e2e8f0;
+}
+
+/* --- Typewriter Cursor Fix --- */
+.typed-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--accent-light);
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* --- Modern Inputs --- */
@@ -78,6 +98,7 @@ input:focus, textarea:focus {
     cursor: pointer;
     text-align: center;
     font-weight: bold;
+    margin: 10px 0;
 }
 
 .nav-button:hover {
@@ -85,22 +106,16 @@ input:focus, textarea:focus {
     box-shadow: 0 5px 15px rgba(202, 81, 232, 0.4);
 }
 
-/* --- Features Grid Fix --- */
+/* --- Layout Fixes --- */
 .features {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    margin-bottom: 20px;
-    width: 100%;
+    margin: 20px 0;
 }
 
-.features .box {
-    margin: 0 !important;
-    padding: 15px;
-    text-align: center;
-}
+.text-center { text-align: center; margin: 15px 0; }
 
-/* --- Toggle Switch Fix --- */
 .switch-container {
     position: relative;
     display: inline-block;
@@ -108,14 +123,6 @@ input:focus, textarea:focus {
     height: 34px;
 }
 
-#theme-toggle {
-    cursor: pointer;
-    width: 34px;
-    height: 34px;
-}
-
-/* --- Utility Classes --- */
+/* --- Utility --- */
 a { color: var(--accent-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
-
-
