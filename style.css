@@ -125,3 +125,7 @@ p { line-height: 1.6; color: #e2e8f0; }
     color: #ca51e8 !important;
     text-shadow: 0 0 10px rgba(202, 81, 232, 0.6) !important;
 }
+/* --- Color for feature box descriptions --- */
+.features .box p {
+    color: var(--accent-light) !important;
+}
