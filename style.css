@@ -69,7 +69,7 @@ p { line-height: 1.6; color: #e2e8f0; }
     padding: 15px;
 }
 
-/* --- Theme Toggle Switch --- */
+/* --- Theme Toggle Switch (Fixed) --- */
 .switch-container {
     position: relative;
     display: inline-block;
@@ -93,8 +93,24 @@ p { line-height: 1.6; color: #e2e8f0; }
     border-radius: 34px;
 }
 
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
 #theme-toggle:checked + .slider {
     background-color: var(--accent-light);
+}
+
+#theme-toggle:checked + .slider:before {
+    transform: translateX(26px);
 }
 
 /* --- Buttons & Links --- */
@@ -129,4 +145,5 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 
 .floating-discord svg { width: 30px; height: 30px; }
+
 
