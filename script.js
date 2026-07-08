@@ -1,10 +1,22 @@
-import { initializeThemeToggle } from './theme.js';
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the theme toggle
-    initializeThemeToggle('theme-toggle');
+    // --- 1. Theme Toggle Logic (Integrated) ---
+    const toggle = document.getElementById('theme-toggle');
+    
+    // Apply saved theme on load
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+        if (toggle) toggle.checked = true;
+    }
 
-    // Status fetch logic
+    // Toggle event
+    if (toggle) {
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('light-theme');
+            localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+        });
+    }
+
+    // --- 2. Status fetch logic ---
     const statusText = document.getElementById('status-text');
     const statusIndicator = document.getElementById('status-indicator');
     if (statusText && statusIndicator) {
@@ -20,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // Form submission logic
+    // --- 3. Form submission logic ---
     const requestForm = document.getElementById('requestForm');
     if (requestForm) {
         requestForm.addEventListener('submit', async (e) => {
