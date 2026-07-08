@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CrystalStudios: Reliable Discord bots, Minecraft setups, and custom development.">
     <title>CrystalStudios | Development</title>
+    <!-- Add your favicon here -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="discord.css">
 </head>
@@ -15,7 +18,7 @@
         <p id="typewriter-text"><span class="typed-text"></span></p>
     </header>
 
-    <div id="status-container" style="text-align: center; margin: 10px 0; padding-bottom: 20px;">
+    <div id="status-container" class="text-center" style="padding-bottom: 20px;">
         Status: <span id="status-indicator">●</span> <span id="status-text">Checking availability...</span>
     </div>
 
@@ -26,33 +29,28 @@
         <div class="box"><h3>Payment</h3><p>We only take CashApp currently</p></div>
     </div>
 
-    <div style="text-align: center; margin-bottom: 40px;">
+    <div class="text-center" style="margin-bottom: 20px;">
         <a href="servers.html" class="nav-button">View Sponsored Minecraft Servers</a>
     </div>
 
-    <!-- Updated Button -->
-    <div style="text-align: center; margin-top: 20px;">
+    <div class="text-center">
         <a href="request.html" class="nav-button">Prices and Requests</a>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
+    <div class="text-center" style="margin-top: 30px;">
         <label class="switch-container">
             <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
         </label>
-        <p style="margin-top: 10px; font-size: 0.8em; color: var(--accent-light);">Toggle Theme</p>
+        <p style="margin-top: 5px; font-size: 0.8em;">Toggle Theme</p>
     </div>
 
-    <!-- Terms of Service Link -->
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="tos.html" style="color: #718096; font-size: 0.8em; text-decoration: underline;">View Terms of Service</a>
+    <div class="text-center" style="margin-top: 20px;">
+        <a href="tos.html" style="text-decoration: underline;">View Terms of Service</a>
     </div>
 </div>
 
 <a href="https://discord.gg/kmEa5FRuRU" class="floating-discord" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24">
-        <path fill="#ffffff" d="M20.317 4.37c-.894-1.25-2.07-2.14-3.48-2.61-.31.06-.61.12-.92.20-.55-.13-1.12-.20-1.68-.20-.56 0-1.13.07-1.68.20-.31-.08-.62-.14-.93-.20-1.41.47-2.59 1.36-3.48 2.61-.88 1.25-1.39 2.82-1.39 4.45 0 1.63.51 3.2 1.39 4.45.89 1.25 2.07 2.14 3.48 2.61.31-.06.62-.12.92-.20.56.13 1.13.20 1.68.20.56 0 1.13-.07 1.68-.20.31.08.62.14.93.20 1.41-.47 2.59-1.36 3.48-2.61.88-1.25 1.39-2.82 1.39-4.45 0-1.63-.51-3.2 1.39-4.45zM8.5 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-    </svg>
+    <svg viewBox="0 0 24 24"><path fill="#ffffff" d="M20.317 4.37c-.894-1.25-2.07-2.14-3.48-2.61-.31.06-.61.12-.92.20-.55-.13-1.12-.20-1.68-.20-.56 0-1.13.07-1.68.20-.31-.08-.62-.14-.93-.20-1.41.47-2.59 1.36-3.48 2.61-.88 1.25-1.39 2.82-1.39 4.45 0 1.63.51 3.2 1.39 4.45.89 1.25 2.07 2.14 3.48 2.61.31-.06.62-.12.92-.20.56.13 1.13.20 1.68.20.56 0 1.13-.07 1.68-.20.31.08.62.14.93.20 1.41-.47 2.59-1.36 3.48-2.61.88-1.25 1.39-2.82 1.39-4.45 0-1.63-.51-3.2 1.39-4.45zM8.5 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
 </a>
 
 <script>
@@ -65,12 +63,10 @@
             await new Promise(resolve => setTimeout(resolve, speed));
         }
     }
-    
     document.addEventListener("DOMContentLoaded", () => {
         typeWriter("Brought to you by CrystalDev!", "typewriter-text", 80);
     });
 </script>
-
 <script type="module" src="script.js"></script>
 </body>
 </html>
