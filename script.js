@@ -1,6 +1,10 @@
 import { initializeThemeToggle } from './theme.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the theme toggle
     initializeThemeToggle('theme-toggle');
+
+    // Status fetch logic
     const statusText = document.getElementById('status-text');
     const statusIndicator = document.getElementById('status-indicator');
     if (statusText && statusIndicator) {
@@ -15,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Error loading status:", err);
             });
     }
+
+    // Form submission logic
     const requestForm = document.getElementById('requestForm');
     if (requestForm) {
         requestForm.addEventListener('submit', async (e) => {
