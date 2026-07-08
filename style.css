@@ -20,13 +20,8 @@ body {
     justify-content: center;
     min-height: 100vh;
     animation: fadeInAnimation ease 1s forwards;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
-
-/* --- Light Theme Overrides --- */
-body.light-theme { background: #eef7ff !important; color: #121418 !important; }
-body.light-theme .container { background: rgba(255, 255, 255, 0.7) !important; border: 1px solid rgba(139, 59, 160, 0.2) !important; }
-body.light-theme p { color: #334155 !important; }
-body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; }
 
 /* --- Glassy Container --- */
 .container {
@@ -39,6 +34,7 @@ body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; }
     max-width: 600px;
     width: 100%;
     animation: float 6s ease-in-out infinite;
+    transition: background 0.4s ease;
 }
 
 /* --- Typography --- */
@@ -54,35 +50,32 @@ p { line-height: 1.6; color: #e2e8f0; }
     border-radius: 15px !important;
     padding: 20px;
     transition: 0.3s ease;
-    opacity: 0;
+    opacity: 1 !important;
     animation: fadeInUp 0.8s ease forwards;
 }
 .box:hover { box-shadow: 0 0 20px var(--accent-glow); border-color: var(--accent-light) !important; transform: translateY(-5px); }
 
-/* --- Glowy Text Overrides --- */
+/* --- Glowy Text (Dark Mode Default) --- */
 .features .box p {
     color: #f4d0ff !important;
     text-shadow: 0 0 10px rgba(202, 81, 232, 0.8), 0 0 20px rgba(202, 81, 232, 0.4);
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin-top: 10px;
 }
 
-/* --- Status & Indicators --- */
-#status-container { text-align: center; margin-bottom: 20px; }
-#status-indicator { font-size: 1.2em; margin-right: 5px; color: #2ecc71; text-shadow: 0 0 8px #2ecc71; }
+/* --- LIGHT MODE OVERRIDES --- */
+body.light-theme { background: #eef7ff !important; color: #121418 !important; }
+body.light-theme .container { background: rgba(255, 255, 255, 0.8) !important; border: 1px solid rgba(139, 59, 160, 0.2) !important; }
+body.light-theme .box { background: rgba(0, 0, 0, 0.05) !important; border: 1px solid rgba(0, 0, 0, 0.1) !important; }
+body.light-theme .box p { color: #334155 !important; text-shadow: none !important; }
+body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shadow: none !important; }
 
-/* --- Buttons & Links --- */
+/* --- Components --- */
 .nav-button {
     display: inline-block; padding: 12px 25px;
     background: linear-gradient(135deg, #ca51e8, #7b2cbf);
     color: white; text-decoration: none; border-radius: 50px !important;
     transition: 0.3s; font-weight: bold; margin: 10px 0;
-    box-shadow: 0 4px 15px rgba(202, 81, 232, 0.4);
 }
-.nav-button:hover { box-shadow: 0 0 25px var(--accent-light); transform: scale(1.05); }
-
+.tos-link { color: var(--accent-light) !important; text-decoration: none; font-weight: 600; }
 .floating-discord {
     position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
     background-color: #5865F2; border-radius: 50%; display: flex;
@@ -91,112 +84,21 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 .floating-discord:hover { transform: scale(1.1); box-shadow: 0 0 25px #5865F2; }
 
+/* --- Switch Styling --- */
+.switch-container { position: relative; display: inline-block; width: 50px; height: 24px; vertical-align: middle; }
+#theme-toggle { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4a4a4a; transition: 0.4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: 0.4s; border-radius: 50%; }
+#theme-toggle:checked + .slider { background-color: var(--accent-light); }
+#theme-toggle:checked + .slider:before { transform: translateX(26px); }
+.theme-label { display: block; margin-top: 8px; color: var(--accent-light); font-weight: 600; font-size: 0.9em; }
+
 /* --- Animations & Scrollbar --- */
 @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-@keyframes fadeInAnimation { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-.box:nth-child(1) { animation-delay: 0.2s; }
-.box:nth-child(2) { animation-delay: 0.4s; }
-.box:nth-child(3) { animation-delay: 0.6s; }
-.box:nth-child(4) { animation-delay: 0.8s; }
-
+@keyframes fadeInAnimation { from { opacity: 0; } to { opacity: 1; } }
+.cursor-glow { position: fixed; pointer-events: none; width: 300px; height: 300px; background: radial-gradient(circle, rgba(202, 81, 232, 0.15), transparent 70%); z-index: -1; }
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #0a0c10; }
 ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ca51e8, #7b2cbf); border-radius: 10px; }
-
-/* --- Utilities --- */
 ::selection { background: #ca51e8; color: #fff; }
-input:focus, textarea:focus { outline: none; border: 1px solid #ca51e8 !important; box-shadow: 0 0 10px rgba(202, 81, 232, 0.5); background: rgba(255, 255, 255, 0.1) !important; }
-/* --- Fix: Prevent boxes from going pure white in light mode --- */
-body.light-theme .box {
-    background: rgba(0, 0, 0, 0.05) !important; /* Very light grey, not pure white */
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-
-body.light-theme .features .box p {
-    color: #334155 !important; /* Dark text for readability */
-    text-shadow: none; /* Glow looks bad on white, turn it off */
-}
-/* --- Fix: Ensure the Toggle Switch styling is applied --- */
-.switch-container { 
-    position: relative; 
-    display: inline-block; 
-    width: 50px; 
-    height: 24px; 
-    vertical-align: middle; 
-}
-
-#theme-toggle { opacity: 0; width: 0; height: 0; }
-
-.slider { 
-    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; 
-    background-color: #4a4a4a; transition: 0.4s; border-radius: 34px; 
-}
-
-.slider:before { 
-    position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; 
-    background-color: white; transition: 0.4s; border-radius: 50%; 
-}
-
-#theme-toggle:checked + .slider { background-color: var(--accent-light); }
-#theme-toggle:checked + .slider:before { transform: translateX(26px); }
-
-/* --- Fix: Restore Toggle Label Color --- */
-.theme-label { 
-    display: block; 
-    margin-top: 8px; 
-    color: var(--accent-light); /* Restored color */
-    font-weight: 600; 
-    font-size: 0.9em; 
-}
-/* --- Fix: Terms of Service Link Color --- */
-.tos-link {
-    color: var(--accent-light) !important;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.tos-link:hover {
-    text-decoration: underline;
-    opacity: 0.8;
-}
-.box {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 15px !important;
-    padding: 20px;
-    transition: 0.3s ease;
-    /* ... rest of your existing .box styles */
-}
-/* Ensure boxes on other pages are visible */
-.box {
-    opacity: 1 !important;
-    margin-bottom: 15px; /* Adds space between the boxes */
-}
-
-/* Optional: Make them look even more like the homepage glow */
-.box p {
-    color: #f4d0ff !important;
-    text-shadow: 0 0 10px rgba(202, 81, 232, 0.8);
-}
-/* --- Light Mode Specific Fixes --- */
-
-/* 1. Force boxes to have a light blue/grey tint instead of transparent */
-body.light-theme .box {
-    background: rgba(200, 220, 255, 0.5) !important;
-    border: 1px solid rgba(139, 59, 160, 0.3) !important;
-}
-
-/* 2. Fix the description text color for light mode */
-/* This ensures they aren't unreadable pink/glowy on a light background */
-body.light-theme .box p {
-    color: #4a5568 !important; /* Darker grey/blue for high contrast */
-    text-shadow: none !important; /* Glow doesn't work well on light backgrounds */
-}
-
-/* 3. Fix header/h3 colors in light mode */
-body.light-theme .box h3 {
-    color: #7b2cbf !important; /* Keep a nice purple for headers */
-}
