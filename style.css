@@ -120,3 +120,8 @@ p { line-height: 1.6; color: #e2e8f0; }
     background: radial-gradient(circle, rgba(202, 81, 232, 0.15) 0%, transparent 70%);
     pointer-events: none; z-index: -1; transform: translate(-50%, -50%); transition: transform 0.1s ease;
 }
+/* FORCE COLOR OVERRIDE */
+.features .box h3 {
+    color: #ca51e8 !important;
+    text-shadow: 0 0 10px rgba(202, 81, 232, 0.6) !important;
+}
