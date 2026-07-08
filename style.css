@@ -10,7 +10,10 @@
 
 /* --- Base Styles --- */
 body {
-    background: radial-gradient(circle at center, #1a1a2e, #0a0c10);
+    background: radial-gradient(circle at 50% 50%, #1e1330 0%, #0a0c10 100%);
+    background-size: 200% 200%;
+    animation: gradient-pulse 15s ease infinite;
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
@@ -20,10 +23,17 @@ body {
     min-height: 100vh;
 }
 
+@keyframes gradient-pulse {
+    0% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 50% 50%; }
+}
+
 /* --- Light Theme Overrides --- */
 body.light-theme {
     background: #eef7ff !important;
     color: #121418 !important;
+    animation: none;
 }
 
 body.light-theme .container {
@@ -130,3 +140,4 @@ p { line-height: 1.6; color: #e2e8f0; }
     transition: 0.3s;
 }
 .floating-discord:hover { transform: scale(1.1); box-shadow: 0 0 25px #5865F2; }
+
