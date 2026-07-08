@@ -9,17 +9,36 @@
 <body>
 <div class="container">
     <h1>Submit a Request</h1>
+
+    <div class="pricing-container" style="margin-bottom: 30px; padding: 20px; background: #1a1c1e; border: 1px solid #4a5568; border-radius: 8px;">
+        <h2 style="color: #d883ed; text-align: center; margin-top: 0;">Our Services & Pricing</h2>
+        <ul style="list-style: none; padding: 0; color: #e7b5f3;">
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #4a5568;">
+                <span>Discord Bot Development</span>
+                <span style="font-weight: bold;">$15 - $50</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #4a5568;">
+                <span>Minecraft Server Setup</span>
+                <span style="font-weight: bold;">$20</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0;">
+                <span>Custom Scripting</span>
+                <span style="font-weight: bold;">Starts at $10</span>
+            </li>
+        </ul>
+    </div>
+
     <form id="requestForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="description">What do you need developed?</label>
-        <textarea id="description" name="description" rows="5" required></textarea>
-        <button type="submit">Submit Request</button>
+        <label for="name" style="display: block; margin-top: 15px;">Name:</label>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #4a5568; background: #25282c; color: white;" required>
+        <label for="email" style="display: block; margin-top: 15px;">Email:</label>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #4a5568; background: #25282c; color: white;" required>
+        <label for="description" style="display: block; margin-top: 15px;">What do you need developed?</label>
+        <textarea id="description" name="description" rows="5" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #4a5568; background: #25282c; color: white;" required></textarea>
+        <button type="submit" class="nav-button" style="margin-top: 20px; border: none; width: 100%; cursor: pointer;">Submit Request</button>
     </form>
     <br>
-    <a href="index.html">Back to Home</a>
+    <a href="index.html" style="color: #ca51e8; text-decoration: none;">← Back to Home</a>
 </div>
 </body>
 </html>
