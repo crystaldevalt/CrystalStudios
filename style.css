@@ -21,12 +21,13 @@ body {
 
 /* --- Light Theme Overrides --- */
 body.light-theme {
-    background-color: #f0f2f5 !important;
+    background-color: #eef7ff !important;
     color: #121418 !important;
 }
 
 body.light-theme .container {
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid #cce5ff !important;
 }
 
 body.light-theme p, 
@@ -35,8 +36,14 @@ body.light-theme h3 {
     color: #121418 !important;
 }
 
+body.light-theme h1, 
+body.light-theme h3 {
+    color: #8b3ba0 !important;
+}
+
 body.light-theme .box {
-    background: rgba(0, 0, 0, 0.05) !important;
+    background: #dbeafe !important;
+    border: 1px solid #bfdbfe !important;
 }
 
 /* --- Layout --- */
