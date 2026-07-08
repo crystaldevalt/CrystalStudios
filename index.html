@@ -31,7 +31,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
-        <a href="request.html" class="nav-button">Open Request Form</a>
+        <a href="request.html" class="nav-button">Prices and Requests</a>
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
@@ -39,32 +39,4 @@
             <input type="checkbox" id="theme-toggle">
             <span class="slider"></span>
         </label>
-        <p style="margin-top: 10px; font-size: 0.8em; color: var(--accent-light);">Toggle Theme</p>
-    </div>
-</div>
-
-<a href="https://discord.gg/kmEa5FRuRU" class="floating-discord" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24">
-        <path fill="#ffffff" d="M20.317 4.37c-.894-1.25-2.07-2.14-3.48-2.61-.31.06-.61.12-.92.20-.55-.13-1.12-.20-1.68-.20-.56 0-1.13.07-1.68.20-.31-.08-.62-.14-.93-.20-1.41.47-2.59 1.36-3.48 2.61-.88 1.25-1.39 2.82-1.39 4.45 0 1.63.51 3.2 1.39 4.45.89 1.25 2.07 2.14 3.48 2.61.31-.06.62-.12.92-.20.56.13 1.13.20 1.68.20.56 0 1.13-.07 1.68-.20.31.08.62.14.93.20 1.41-.47 2.59-1.36 3.48-2.61.88-1.25 1.39-2.82 1.39-4.45 0-1.63-.51-3.2 1.39-4.45zM8.5 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-    </svg>
-</a>
-
-<script>
-    async function typeWriter(text, elementId, speed = 80) {
-        const element = document.querySelector("#" + elementId + " .typed-text");
-        if (!element) return;
-        element.textContent = "";
-        for (let i = 0; i < text.length; i++) {
-            element.textContent += text.charAt(i);
-            await new Promise(resolve => setTimeout(resolve, speed));
-        }
-    }
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        typeWriter("Brought to you by CrystalDev!", "typewriter-text", 80);
-    });
-</script>
-
-<script type="module" src="script.js"></script>
-</body>
-</html>
+        <p style="margin-top: 10px; font-size:
