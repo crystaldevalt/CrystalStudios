@@ -29,7 +29,7 @@ body {
     width: 100%;
 }
 
-/* --- Centering Everything --- */
+/* --- Centering --- */
 header, #status-container, .text-center {
     text-align: center;
 }
@@ -37,7 +37,7 @@ header, #status-container, .text-center {
 h1, h2, h3 { color: var(--accent-light); letter-spacing: 0.5px; margin-top: 0; }
 p { line-height: 1.6; color: #e2e8f0; }
 
-/* --- Typewriter Fixes --- */
+/* --- Typewriter --- */
 #typewriter-text {
     min-height: 24px;
     display: flex;
@@ -69,16 +69,32 @@ p { line-height: 1.6; color: #e2e8f0; }
     padding: 15px;
 }
 
-/* --- Theme Toggle Switch Fix --- */
+/* --- Theme Toggle Switch --- */
 .switch-container {
+    position: relative;
     display: inline-block;
+    width: 50px;
+    height: 24px;
     vertical-align: middle;
 }
 
 #theme-toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
     cursor: pointer;
-    width: 40px;
-    height: 20px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #4a4a4a;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+#theme-toggle:checked + .slider {
+    background-color: var(--accent-light);
 }
 
 /* --- Buttons & Links --- */
@@ -96,3 +112,21 @@ p { line-height: 1.6; color: #e2e8f0; }
 
 .nav-button:hover { transform: translateY(-3px); }
 .tos-link { color: var(--accent-light); text-decoration: underline; font-size: 0.8em; }
+
+/* --- Discord Button --- */
+.floating-discord {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #5865F2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.floating-discord svg { width: 30px; height: 30px; }
+
