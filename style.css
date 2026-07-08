@@ -181,3 +181,22 @@ body.light-theme .features .box p {
     color: #f4d0ff !important;
     text-shadow: 0 0 10px rgba(202, 81, 232, 0.8);
 }
+/* --- Light Mode Specific Fixes --- */
+
+/* 1. Force boxes to have a light blue/grey tint instead of transparent */
+body.light-theme .box {
+    background: rgba(200, 220, 255, 0.5) !important;
+    border: 1px solid rgba(139, 59, 160, 0.3) !important;
+}
+
+/* 2. Fix the description text color for light mode */
+/* This ensures they aren't unreadable pink/glowy on a light background */
+body.light-theme .box p {
+    color: #4a5568 !important; /* Darker grey/blue for high contrast */
+    text-shadow: none !important; /* Glow doesn't work well on light backgrounds */
+}
+
+/* 3. Fix header/h3 colors in light mode */
+body.light-theme .box h3 {
+    color: #7b2cbf !important; /* Keep a nice purple for headers */
+}
