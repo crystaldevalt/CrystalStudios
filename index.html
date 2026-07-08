@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CrystalStudios: Reliable Discord bots, Minecraft setups, and custom development.">
     <title>CrystalStudios | Development</title>
-    <!-- Add your favicon here -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="discord.css">
@@ -15,10 +14,12 @@
 <div class="container">
     <header>
         <h1>CrystalStudios</h1>
-        <p id="typewriter-text"><span class="typed-text"></span></p>
+        <div id="typewriter-text">
+            <span class="typed-text"></span>
+        </div>
     </header>
 
-    <div id="status-container" class="text-center" style="padding-bottom: 20px;">
+    <div id="status-container">
         Status: <span id="status-indicator">●</span> <span id="status-text">Checking availability...</span>
     </div>
 
@@ -29,7 +30,7 @@
         <div class="box"><h3>Payment</h3><p>We only take CashApp currently</p></div>
     </div>
 
-    <div class="text-center" style="margin-bottom: 20px;">
+    <div class="text-center">
         <a href="servers.html" class="nav-button">View Sponsored Minecraft Servers</a>
     </div>
 
@@ -37,15 +38,15 @@
         <a href="request.html" class="nav-button">Prices and Requests</a>
     </div>
 
-    <div class="text-center" style="margin-top: 30px;">
+    <div class="text-center">
         <label class="switch-container">
             <input type="checkbox" id="theme-toggle">
         </label>
-        <p style="margin-top: 5px; font-size: 0.8em;">Toggle Theme</p>
+        <p>Toggle Theme</p>
     </div>
 
-    <div class="text-center" style="margin-top: 20px;">
-        <a href="tos.html" style="text-decoration: underline;">View Terms of Service</a>
+    <div class="text-center">
+        <a href="tos.html" class="tos-link">View Terms of Service</a>
     </div>
 </div>
 
@@ -70,3 +71,4 @@
 <script type="module" src="script.js"></script>
 </body>
 </html>
+
