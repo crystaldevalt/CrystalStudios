@@ -172,5 +172,10 @@ body.light-theme .theme-label {
     color: #8b3ba0 !important;
     text-shadow: 0 0 5px rgba(139, 59, 160, 0.2);
 }
+/* --- Feature Box Text Color --- */
+.features .box h3 {
+    color: var(--accent-light) !important;
+    text-shadow: 0 0 8px rgba(202, 81, 232, 0.5);
+}
 
 
