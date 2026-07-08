@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Theme Toggle ---
     const toggle = document.getElementById('theme-toggle');
     if (toggle) {
-        // Apply saved theme on load
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-theme');
             toggle.checked = true;
@@ -41,13 +40,28 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 statusText.innerText = data.message;
-                // Ensures only 'online' or 'offline' class is added
                 statusIndicator.className = data.status; 
             })
             .catch(err => {
                 console.warn("Status fetch issue:", err);
                 statusText.innerText = "Status unavailable";
-                statusIndicator.className = "offline"; // Default to red
+                statusIndicator.className = "offline";
             });
     }
+
+    // --- 4. Page Fade Transition ---
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Only fade for internal pages, not external links like Discord
+            if (this.getAttribute('href').startsWith('http')) return;
+            
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            document.body.style.opacity = '0';
+            
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); 
+        });
+    });
 });
