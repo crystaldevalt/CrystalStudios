@@ -4,10 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Typewriter ---
     async function typeWriter(text, elementId, speed = 80) {
         const element = document.querySelector("#" + elementId + " .typed-text");
-        if (!element) {
-            console.log("Typewriter element not found!");
-            return;
-        }
+        if (!element) return;
+        
         element.textContent = "";
         for (let i = 0; i < text.length; i++) {
             element.textContent += text.charAt(i);
@@ -19,35 +17,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Theme Toggle ---
     const toggle = document.getElementById('theme-toggle');
     if (toggle) {
-        console.log("Toggle button found!");
-        // Check saved theme
+        // Apply saved theme on load
         if (localStorage.getItem('theme') === 'light') {
             document.body.classList.add('light-theme');
             toggle.checked = true;
         }
-        // Toggle event
+
         toggle.addEventListener('change', () => {
-            console.log("Toggle clicked!");
-            document.body.classList.toggle('light-theme');
-            localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+            const isLight = document.body.classList.toggle('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
-    } else {
-        console.log("Toggle button NOT found!");
     }
 
     // --- 3. Status Fetch ---
     const statusText = document.getElementById('status-text');
     const statusIndicator = document.getElementById('status-indicator');
+
     if (statusText && statusIndicator) {
         fetch('status.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error("File not found");
+                return response.json();
+            })
             .then(data => {
                 statusText.innerText = data.message;
+                // Ensures only 'online' or 'offline' class is added
                 statusIndicator.className = data.status; 
             })
             .catch(err => {
-                console.log("Status fetch failed (check if status.json exists):", err);
+                console.warn("Status fetch issue:", err);
                 statusText.innerText = "Status unavailable";
+                statusIndicator.className = "offline"; // Default to red
             });
     }
 });
