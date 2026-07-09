@@ -1,28 +1,40 @@
-/* --- Root Variables --- */
+/* --- 1. Define Variables --- */
 :root {
-    --bg-main: #0a0c10;
+    /* Dark Mode Defaults */
+    --bg-main: radial-gradient(circle at center, #1a1a2e, #0a0c10);
     --bg-container: rgba(30, 32, 36, 0.7);
-    --accent-light: #ca51e8;
-    --accent-glow: rgba(202, 81, 232, 0.3);
-    --border-color: rgba(255, 255, 255, 0.15);
+    --bg-box: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-desc: #f4d0ff;
+    --accent: #ca51e8;
+    --border: rgba(255, 255, 255, 0.15);
 }
 
-/* --- Base Styles --- */
+body.light-theme {
+    /* Light Mode Overrides */
+    --bg-main: #eef7ff;
+    --bg-container: rgba(255, 255, 255, 0.8);
+    --bg-box: rgba(200, 220, 255, 0.5);
+    --text-main: #121418;
+    --text-desc: #334155;
+    --accent: #8b3ba0;
+    --border: rgba(139, 59, 160, 0.2);
+}
+
+/* --- 2. Base Styles --- */
 body {
-    background: radial-gradient(circle at center, #1a1a2e, #0a0c10);
-    color: #ffffff;
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: background 0.4s, color 0.4s;
     font-family: sans-serif;
     margin: 0; padding: 20px;
     display: flex; justify-content: center;
     min-height: 100vh;
-    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- Containers --- */
 .container {
     background: var(--bg-container);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 30px;
     max-width: 600px;
@@ -30,25 +42,20 @@ body {
 }
 
 .box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    background: var(--bg-box);
+    border: 1px solid var(--border);
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 15px;
 }
 
-/* --- Status Indicator --- */
+h1, h3 { color: var(--accent); }
+p { color: var(--text-desc); }
+
+/* --- 3. Fixed Components --- */
 #status-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
 .online { background-color: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
 .offline { background-color: #e74c3c; box-shadow: 0 0 8px #e74c3c; }
 
-/* --- Text Styles --- */
-h1, h3 { color: var(--accent-light); margin-top: 0; }
-p { color: #e2e8f0; }
+/* Keep your existing animations/scrollbar here at the end */
 
-/* --- LIGHT MODE RULES --- */
-body.light-theme { background: #eef7ff; color: #121418; }
-body.light-theme .container { background: rgba(255, 255, 255, 0.8); }
-body.light-theme .box { background: #e2e8f0; border-color: #cbd5e1; }
-body.light-theme h1, body.light-theme h3 { color: #7b2cbf; }
-body.light-theme p { color: #334155; }
