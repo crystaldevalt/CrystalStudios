@@ -3,45 +3,52 @@
 
 /* --- Light Mode Overrides --- */
 
-/* 1. Page Background (Darker Grey) and General Text */
+/* 1. Page Background (Light Gradient) */
 body { 
-    background: #cbd5e1 !important; 
-    color: #121418 !important; 
+    background: radial-gradient(circle at center, #f8fafc, #cbd5e1) !important; 
+    color: #1e293b !important; 
 }
 
-/* 2. Main Container Glass effect */
+/* 2. Main Container Glass effect (Light/White Frosted) */
 .container { 
-    background: rgba(255, 255, 255, 0.8) !important; 
-    border: 1px solid rgba(139, 59, 160, 0.2) !important; 
+    background: rgba(255, 255, 255, 0.6) !important; /* Semi-transparent white */
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15) !important;
 }
 
-/* 3. Feature Boxes (Grey box with Glowy Blue border) */
+/* 3. Feature Boxes (Frosted White) */
 .features .box { 
-    background: rgba(241, 245, 249, 0.9) !important; 
-    border: 1px solid #3b82f6 !important;            
-    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5) !important; 
+    background: rgba(255, 255, 255, 0.5) !important; 
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;            
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important; 
+}
+.features .box:hover {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-color: #3b82f6 !important;
 }
 
-/* 4. Headers (Darker Light Blue) */
+/* 4. Headers */
 h1, h3 { 
     color: #2563eb !important; 
-    text-shadow: none !important; 
+    text-shadow: 0 0 5px rgba(37, 99, 235, 0.2) !important; 
 }
 
 /* 5. Scrollbar Track */
 ::-webkit-scrollbar-track { 
-    background: #94a3b8 !important; 
+    background: #cbd5e1 !important; 
 }
 
-/* 6. Glowy/Glassy Blue Text Override */
-.features .box p {
+/* 6. Glowy Blue Text */
+.features .box p, .box p {
     color: #1e40af !important; 
     text-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
 }
 
 /* 7. Buttons (Blue style to match) */
 .nav-button {
-    background: linear-gradient(135deg, #3b82f6, #1e3a8a) !important;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
 
@@ -51,19 +58,12 @@ h1, h3 {
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
 }
 
-/* --- NEW: Theme Toggle & TOS Blue Overrides --- */
+/* --- Theme Toggle & TOS Blue Overrides --- */
 
-/* Terms of Service Link */
-.tos-link { 
-    color: #2563eb !important; 
-}
+.tos-link { color: #2563eb !important; }
 
-/* Theme Toggle Slider */
 #theme-toggle:checked + .slider { 
     background-color: #3b82f6 !important; 
 }
 
-/* Theme Label text */
-.theme-label { 
-    color: #2563eb !important; 
-}
+.theme-label { color: #2563eb !important; }
