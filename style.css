@@ -89,9 +89,10 @@ body.light-theme .features .box {
     background: rgba(180, 205, 240, 0.7) !important; 
     border: 1px solid rgba(139, 59, 160, 0.3) !important; 
 }
-body.light-theme p { color: #334155 !important; }
+
+/* We removed the rule that was forcing the text to dark grey, 
+   so the glowy pink style will now apply to both themes! */
 body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shadow: none !important; }
-body.light-theme .features .box p { color: #334155 !important; text-shadow: none !important; }
 
 /* --- Components --- */
 .nav-button {
