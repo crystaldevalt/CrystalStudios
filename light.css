@@ -3,9 +3,9 @@
 
 /* --- Light Mode Overrides --- */
 
-/* 1. Page Background (Light Grey) and General Text */
+/* 1. Page Background (Darker Grey) and General Text */
 body { 
-    background: #e2e8f0 !important; 
+    background: #cbd5e1 !important; /* Slightly darker grey */
     color: #121418 !important; 
 }
 
@@ -15,10 +15,10 @@ body {
     border: 1px solid rgba(139, 59, 160, 0.2) !important; 
 }
 
-/* 3. Feature Boxes */
+/* 3. Feature Boxes (Light Blue) */
 .features .box { 
-    background: rgba(255, 255, 255, 0.6) !important; /* Slightly more transparent for glassier look */
-    border: 1px solid rgba(59, 130, 246, 0.2) !important; 
+    background: rgba(219, 234, 254, 0.8) !important; /* Light blue tint */
+    border: 1px solid rgba(59, 130, 246, 0.4) !important; 
 }
 
 /* 4. Headers (Darker Light Blue) */
@@ -29,13 +29,12 @@ h1, h3 {
 
 /* 5. Scrollbar Track */
 ::-webkit-scrollbar-track { 
-    background: #cbd5e1 !important; 
+    background: #94a3b8 !important; /* Adjusted for darker grey */
 }
 
 /* 6. Glowy/Glassy Blue Text Override */
 .features .box p {
     color: #1e40af !important; 
-    /* Soft glow for readability on light background */
     text-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
 }
 
