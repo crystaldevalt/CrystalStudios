@@ -11,26 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     typeWriter("Brought to you by CrystalDev!", "typewriter-text", 80);
 
-    // 2. Theme Toggle (Updated for CSS file swapping)
+    // 2. Theme Toggle Interaction
     const toggle = document.getElementById('theme-toggle');
     const themeLink = document.getElementById('theme-stylesheet');
     
     if (toggle && themeLink) {
-        // Load saved theme from localStorage
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        if (savedTheme === 'light') {
-            themeLink.href = 'light.css';
-            toggle.checked = true;
-        }
+        // Set initial toggle state based on current link
+        toggle.checked = themeLink.href.includes('light.css');
 
         toggle.addEventListener('change', () => {
-            if (toggle.checked) {
-                themeLink.href = 'light.css';
-                localStorage.setItem('theme', 'light');
-            } else {
-                themeLink.href = 'dark.css';
-                localStorage.setItem('theme', 'dark');
-            }
+            const theme = toggle.checked ? 'light.css' : 'dark.css';
+            themeLink.href = theme;
+            localStorage.setItem('theme', toggle.checked ? 'light' : 'dark');
         });
     }
 
@@ -42,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(data => {
                 statusText.innerText = data.message;
-                // Sets the class to 'online' or 'offline'
                 statusIndicator.className = data.status;
             })
             .catch(() => {
@@ -54,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Fade Transition
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(e) {
-            // Ignore external links
-            if (this.getAttribute('href').startsWith('http')) return;
+            const href = this.getAttribute('href');
+            if (!href || href.startsWith('http') || href.startsWith('#')) return;
             e.preventDefault();
             document.body.style.opacity = '0';
-            setTimeout(() => window.location.href = this.getAttribute('href'), 500);
+            setTimeout(() => window.location.href = href, 500);
         });
     });
 });

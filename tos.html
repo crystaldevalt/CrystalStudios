@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | CrystalStudios</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Theme Persistence Script -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.write('<link rel="stylesheet" href="' + (savedTheme === 'light' ? 'light.css' : 'dark.css') + '" id="theme-stylesheet">');
+    </script>
+    
+    <style>
+        /* Smooth fade effect for the page */
+        body { transition: opacity 0.5s ease; }
+    </style>
 </head>
 <body>
 <div class="container">
