@@ -17,17 +17,36 @@ body {
 
 /* 3. Feature Boxes */
 .features .box { 
-    background: rgba(180, 205, 240, 0.7) !important; 
-    border: 1px solid rgba(139, 59, 160, 0.3) !important; 
+    background: rgba(255, 255, 255, 0.6) !important; /* Slightly more transparent for glassier look */
+    border: 1px solid rgba(59, 130, 246, 0.2) !important; 
 }
 
-/* 4. Headers (Updated to Darker Light Blue) */
+/* 4. Headers (Darker Light Blue) */
 h1, h3 { 
-    color: #3b82f6 !important; 
+    color: #2563eb !important; 
     text-shadow: none !important; 
 }
 
 /* 5. Scrollbar Track */
 ::-webkit-scrollbar-track { 
     background: #cbd5e1 !important; 
+}
+
+/* 6. Glowy/Glassy Blue Text Override */
+.features .box p {
+    color: #1e40af !important; 
+    /* Soft glow for readability on light background */
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+/* 7. Buttons (Blue style to match) */
+.nav-button {
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a) !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* 8. Discord Button Override */
+.floating-discord {
+    background-color: #3b82f6 !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
 }
