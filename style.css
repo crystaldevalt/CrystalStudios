@@ -76,23 +76,11 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 .box:hover { box-shadow: 0 0 20px var(--accent-glow); border-color: var(--accent-light) !important; transform: translateY(-5px); }
 
-/* --- Glowy Text (Dark Mode Default) --- */
+/* --- Glowy Text (Persistent) --- */
 .features .box p {
     color: #f4d0ff !important;
     text-shadow: 0 0 10px rgba(202, 81, 232, 0.8), 0 0 20px rgba(202, 81, 232, 0.4);
 }
-
-/* --- LIGHT MODE OVERRIDES --- */
-body.light-theme { background: #eef7ff !important; color: #121418 !important; }
-body.light-theme .container { background: rgba(255, 255, 255, 0.8) !important; border: 1px solid rgba(139, 59, 160, 0.2) !important; }
-body.light-theme .features .box { 
-    background: rgba(180, 205, 240, 0.7) !important; 
-    border: 1px solid rgba(139, 59, 160, 0.3) !important; 
-}
-
-/* We removed the rule that was forcing the text to dark grey, 
-   so the glowy pink style will now apply to both themes! */
-body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shadow: none !important; }
 
 /* --- Components --- */
 .nav-button {
