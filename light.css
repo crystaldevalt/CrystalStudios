@@ -1,0 +1,30 @@
+/* --- Light Mode Overrides --- */
+
+/* 1. Page Background and General Text */
+body { 
+    background: #eef7ff !important; 
+    color: #121418 !important; 
+}
+
+/* 2. Main Container Glass effect (Lightened) */
+.container { 
+    background: rgba(255, 255, 255, 0.8) !important; 
+    border: 1px solid rgba(139, 59, 160, 0.2) !important; 
+}
+
+/* 3. Feature Boxes (Blue tint for light mode) */
+.features .box { 
+    background: rgba(180, 205, 240, 0.7) !important; 
+    border: 1px solid rgba(139, 59, 160, 0.3) !important; 
+}
+
+/* 4. Headers (Removing the shadow for better readability) */
+h1, h3 { 
+    color: #8b3ba0 !important; 
+    text-shadow: none !important; 
+}
+
+/* 5. Scrollbar Track (Adjusted for light background) */
+::-webkit-scrollbar-track { 
+    background: #d1d8e0 !important; 
+}
