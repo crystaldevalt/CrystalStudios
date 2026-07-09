@@ -50,6 +50,19 @@ p { line-height: 1.6; color: #e2e8f0; }
     font-weight: 500;
 }
 
+/* --- Status Dot --- */
+#status-indicator {
+    display: inline-block !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    text-indent: -9999px !important;
+    vertical-align: middle !important;
+    flex-shrink: 0;
+}
+.online { background-color: #2ecc71 !important; box-shadow: 0 0 8px #2ecc71 !important; }
+.offline { background-color: #e74c3c !important; box-shadow: 0 0 8px #e74c3c !important; }
+
 /* --- Features Grid & Boxes --- */
 .features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
 .box {
@@ -63,6 +76,12 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 .box:hover { box-shadow: 0 0 20px var(--accent-glow); border-color: var(--accent-light) !important; transform: translateY(-5px); }
 
+/* --- Glowy Text (Dark Mode Default) --- */
+.features .box p {
+    color: #f4d0ff !important;
+    text-shadow: 0 0 10px rgba(202, 81, 232, 0.8), 0 0 20px rgba(202, 81, 232, 0.4);
+}
+
 /* --- LIGHT MODE OVERRIDES --- */
 body.light-theme { background: #eef7ff !important; color: #121418 !important; }
 body.light-theme .container { background: rgba(255, 255, 255, 0.8) !important; border: 1px solid rgba(139, 59, 160, 0.2) !important; }
@@ -72,6 +91,7 @@ body.light-theme .features .box {
 }
 body.light-theme p { color: #334155 !important; }
 body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shadow: none !important; }
+body.light-theme .features .box p { color: #334155 !important; text-shadow: none !important; }
 
 /* --- Components --- */
 .nav-button {
@@ -107,17 +127,3 @@ body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shado
 ::-webkit-scrollbar-track { background: #0a0c10; }
 ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ca51e8, #7b2cbf); border-radius: 10px; }
 ::selection { background: #ca51e8; color: #fff; }
-/* --- Fix: Force Status Dot Color --- */
-#status-indicator {
-    color: inherit !important; /* Forces it to use the color assigned by your JS/class */
-}
-
-/* Ensure the dots don't turn black in light mode */
-body.light-theme .online { 
-    background-color: #2ecc71 !important; 
-    box-shadow: 0 0 8px #2ecc71 !important; 
-}
-body.light-theme .offline { 
-    background-color: #e74c3c !important; 
-    box-shadow: 0 0 8px #e74c3c !important; 
-}
