@@ -107,3 +107,17 @@ body.light-theme h1, body.light-theme h3 { color: #8b3ba0 !important; text-shado
 ::-webkit-scrollbar-track { background: #0a0c10; }
 ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ca51e8, #7b2cbf); border-radius: 10px; }
 ::selection { background: #ca51e8; color: #fff; }
+/* --- Fix: Force Status Dot Color --- */
+#status-indicator {
+    color: inherit !important; /* Forces it to use the color assigned by your JS/class */
+}
+
+/* Ensure the dots don't turn black in light mode */
+body.light-theme .online { 
+    background-color: #2ecc71 !important; 
+    box-shadow: 0 0 8px #2ecc71 !important; 
+}
+body.light-theme .offline { 
+    background-color: #e74c3c !important; 
+    box-shadow: 0 0 8px #e74c3c !important; 
+}
