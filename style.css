@@ -113,9 +113,27 @@ body.light-theme .container { background: rgba(255, 255, 255, 0.8) !important; b
     margin: 10px 0;
 }
 
-/* --- Fix: Blue Boxes (Slightly Darker) --- */
-/* We increased the alpha from 0.6 to 0.75 to make it less transparent/darker */
-body.light-theme .box {
-    background: rgba(180, 205, 240, 0.75) !important;
-    border: 1px solid rgba(139, 59, 160, 0.4) !important;
+/* --- Status Alignment Fix --- */
+#status-container {
+    text-align: center;      /* Centers the text and the dot */
+    margin: 15px 0;          /* Adds space above and below */
+    font-weight: 500;
+}
+
+#status-indicator {
+    display: inline-block;   /* Allows it to be centered like text */
+    margin-right: 5px;
+}
+
+/* --- Blue Boxes Fix --- */
+/* This specifically targets the boxes inside the features grid */
+.features .box {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Light Mode: The Blue Boxes */
+body.light-theme .features .box {
+    background: rgba(180, 205, 240, 0.7) !important;
+    border: 1px solid rgba(139, 59, 160, 0.3) !important;
 }
