@@ -1,69 +1,42 @@
-/* --- Import base structure --- */
 @import url('dark.css');
-
-/* --- Light Mode Overrides --- */
-
-/* 1. Page Background (Darker Grey) and General Text */
 body { 
     background: #cbd5e1 !important; 
     color: #121418 !important; 
 }
-
-/* 2. Main Container Glass effect */
 .container { 
     background: rgba(255, 255, 255, 0.8) !important; 
     border: 1px solid rgba(139, 59, 160, 0.2) !important; 
 }
-
-/* 3. Feature Boxes (Grey box with Glowy Blue border) */
 .features .box { 
     background: rgba(241, 245, 249, 0.9) !important; 
     border: 1px solid #3b82f6 !important;            
     box-shadow: 0 0 12px rgba(59, 130, 246, 0.5) !important; 
 }
-
-/* 4. Headers (Darker Light Blue) */
 h1, h3 { 
     color: #2563eb !important; 
     text-shadow: none !important; 
 }
-
-/* 5. Scrollbar Track */
 ::-webkit-scrollbar-track { 
     background: #94a3b8 !important; 
 }
-
-/* 6. Glowy/Glassy Blue Text Override */
 .features .box p {
     color: #1e40af !important; 
     text-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
 }
-
-/* 7. Buttons (Blue style to match) */
 .nav-button {
     background: linear-gradient(135deg, #3b82f6, #1e3a8a) !important;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
-
-/* 8. Discord Button Override */
 .floating-discord {
     background-color: #3b82f6 !important;
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
 }
-
-/* --- NEW: Theme Toggle & TOS Blue Overrides --- */
-
-/* Terms of Service Link */
 .tos-link { 
     color: #2563eb !important; 
 }
-
-/* Theme Toggle Slider */
 #theme-toggle:checked + .slider { 
     background-color: #3b82f6 !important; 
 }
-
-/* Theme Label text */
 .theme-label { 
     color: #2563eb !important; 
 }

@@ -15,15 +15,13 @@ a.floating-discord {
     border-style: none !important;
     text-decoration: none !important;
 }
-
 a.floating-discord svg {
     display: block !important;
-    width: 35px !important; /* Slightly smaller than the button for better look */
+    width: 35px !important;
     height: 35px !important;
-    fill: #ffffff !important; /* Force white */
+    fill: #ffffff !important;
     pointer-events: none !important;
 }
-
 a.floating-discord:hover {
     transform: scale(1.1) rotate(10deg) !important;
     background-color: #4752c4 !important;

@@ -1,4 +1,3 @@
-/* --- Root Variables --- */
 :root {
     --bg-main: #0a0c10;
     --bg-container: rgba(30, 32, 36, 0.7);
@@ -7,8 +6,6 @@
     --border-color: rgba(255, 255, 255, 0.15);
     --text-color: #ffffff;
 }
-
-/* --- Base Styles --- */
 html { scroll-behavior: smooth; }
 body {
     background: radial-gradient(circle at center, #1a1a2e, #0a0c10);
@@ -20,8 +17,6 @@ body {
     animation: fadeInAnimation ease 1s forwards;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
-
-/* --- Glassy Container --- */
 .container {
     background: var(--bg-container) !important;
     backdrop-filter: blur(20px);
@@ -34,13 +29,9 @@ body {
     animation: float 6s ease-in-out infinite;
     transition: background 0.4s ease;
 }
-
-/* --- Typography --- */
 header, .text-center { text-align: center; }
 h1, h3 { color: var(--accent-light) !important; text-shadow: 0 0 10px var(--accent-glow); margin-top: 0; }
 p { line-height: 1.6; color: #e2e8f0; }
-
-/* --- Status Container (Centered) --- */
 #status-container {
     display: flex !important;
     justify-content: center !important;
@@ -49,8 +40,6 @@ p { line-height: 1.6; color: #e2e8f0; }
     gap: 8px !important;
     font-weight: 500;
 }
-
-/* --- Status Dot --- */
 #status-indicator {
     display: inline-block !important;
     width: 12px !important;
@@ -62,8 +51,6 @@ p { line-height: 1.6; color: #e2e8f0; }
 }
 .online { background-color: #2ecc71 !important; box-shadow: 0 0 8px #2ecc71 !important; }
 .offline { background-color: #e74c3c !important; box-shadow: 0 0 8px #e74c3c !important; }
-
-/* --- Features Grid & Boxes --- */
 .features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
 .box {
     background: rgba(255, 255, 255, 0.05) !important;
@@ -75,14 +62,10 @@ p { line-height: 1.6; color: #e2e8f0; }
     animation: fadeInUp 0.8s ease forwards;
 }
 .box:hover { box-shadow: 0 0 20px var(--accent-glow); border-color: var(--accent-light) !important; transform: translateY(-5px); }
-
-/* --- Glowy Text (Persistent) --- */
 .features .box p {
     color: #f4d0ff !important;
     text-shadow: 0 0 10px rgba(202, 81, 232, 0.8), 0 0 20px rgba(202, 81, 232, 0.4);
 }
-
-/* --- Components --- */
 .nav-button {
     display: inline-block; padding: 12px 25px;
     background: linear-gradient(135deg, #ca51e8, #7b2cbf);
@@ -97,8 +80,6 @@ p { line-height: 1.6; color: #e2e8f0; }
     z-index: 500; transition: 0.3s;
 }
 .floating-discord:hover { transform: scale(1.1); box-shadow: 0 0 25px #5865F2; }
-
-/* --- Switch Styling --- */
 .switch-container { position: relative; display: inline-block; width: 50px; height: 24px; vertical-align: middle; }
 #theme-toggle { opacity: 0; width: 0; height: 0; }
 .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4a4a4a; transition: 0.4s; border-radius: 34px; }
@@ -106,8 +87,6 @@ p { line-height: 1.6; color: #e2e8f0; }
 #theme-toggle:checked + .slider { background-color: var(--accent-light); }
 #theme-toggle:checked + .slider:before { transform: translateX(26px); }
 .theme-label { display: block; margin-top: 8px; color: var(--accent-light); font-weight: 600; font-size: 0.9em; }
-
-/* --- Animations & Scrollbar --- */
 @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInAnimation { from { opacity: 0; } to { opacity: 1; } }

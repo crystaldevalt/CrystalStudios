@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Typewriter
     async function typeWriter(text, elementId, speed = 80) {
         const element = document.querySelector("#" + elementId + " .typed-text");
         if (!element) return;
@@ -10,23 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     typeWriter("Brought to you by CrystalDev!", "typewriter-text", 80);
-
-    // 2. Theme Toggle Interaction
     const toggle = document.getElementById('theme-toggle');
     const themeLink = document.getElementById('theme-stylesheet');
-    
     if (toggle && themeLink) {
-        // Set initial toggle state based on current link
         toggle.checked = themeLink.href.includes('light.css');
-
         toggle.addEventListener('change', () => {
             const theme = toggle.checked ? 'light.css' : 'dark.css';
             themeLink.href = theme;
             localStorage.setItem('theme', toggle.checked ? 'light' : 'dark');
         });
     }
-
-    // 3. Status Fetch
     const statusText = document.getElementById('status-text');
     const statusIndicator = document.getElementById('status-indicator');
     if (statusText && statusIndicator) {
@@ -41,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusIndicator.className = "offline";
             });
     }
-
-    // 4. Fade Transition
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');

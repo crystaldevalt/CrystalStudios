@@ -4,53 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | CrystalStudios</title>
-    
-    <!-- Theme Persistence Script -->
     <script>
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.write('<link rel="stylesheet" href="' + (savedTheme === 'light' ? 'light.css' : 'dark.css') + '" id="theme-stylesheet">');
     </script>
-    
     <style>
-        /* Smooth fade effect for the page */
         body { transition: opacity 0.5s ease; }
-        
-        /* Updated Description Style */
         .box p {
-            color: #60a5fa !important; /* Light blue */
-            text-shadow: 0 0 8px rgba(96, 165, 250, 0.6); /* Glow effect */
+            color: #60a5fa !important;
+            text-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
         }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Terms of Service</h1>
-    
     <div class="box">
         <h3>1. Payment</h3>
         <p>All payments must be made via <strong>CashApp</strong>. We do not begin work until payment or a partial deposit is confirmed.</p>
     </div>
-        
     <div class="box">
         <h3>2. Refunds</h3>
         <p>Refunds are handled on a case-by-case basis. If you are unsatisfied, please reach out to us via Discord so we can resolve the issue.</p>
     </div>
-        
     <div class="box">
         <h3>3. Delivery & Usage</h3>
         <p>All code/assets delivered are for your personal or commercial use as discussed during the request phase. We reserve the right to showcase our work in our portfolio.</p>
     </div>
-        
     <div class="box">
         <h3>4. Support</h3>
         <p>We provide support for bugs or issues identified within 7 days of the final delivery.</p>
     </div>
-
     <div class="text-center" style="margin-top: 30px;">
         <a href="index.html" class="nav-button">Back to Home</a>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
