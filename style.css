@@ -18,15 +18,7 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- Status Indicator --- */
-#status-indicator { 
-    display: inline-block; width: 10px; height: 10px; 
-    border-radius: 50%; margin-right: 5px; 
-}
-.online { background-color: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
-.offline { background-color: #e74c3c; box-shadow: 0 0 8px #e74c3c; }
-
-/* --- Containers & Boxes --- */
+/* --- Containers --- */
 .container {
     background: var(--bg-container);
     backdrop-filter: blur(20px);
@@ -44,26 +36,19 @@ body {
     padding: 20px;
     margin-bottom: 15px;
 }
-/* --- LIGHT MODE OVERRIDES (FIXED) --- */
-body.light-theme { background: #eef7ff !important; color: #121418 !important; }
-body.light-theme .container { background: rgba(255, 255, 255, 0.8) !important; border: 1px solid rgba(139, 59, 160, 0.2) !important; }
 
-/* 1. Force the boxes to be light blue */
-body.light-theme .box { 
-    background: rgba(200, 220, 255, 0.5) !important; 
-    border: 1px solid rgba(139, 59, 160, 0.2) !important; 
-}
+/* --- Status Indicator --- */
+#status-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.online { background-color: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
+.offline { background-color: #e74c3c; box-shadow: 0 0 8px #e74c3c; }
 
-/* 2. Force paragraph text to be dark (Targeting the paragraph directly inside boxes) */
-body.light-theme .box p { 
-    color: #334155 !important; 
-    text-shadow: none !important; 
-    background: transparent !important; 
-}
+/* --- Text Styles --- */
+h1, h3 { color: var(--accent-light); margin-top: 0; }
+p { color: #e2e8f0; }
 
-/* 3. Force headers to be purple */
-body.light-theme .box h3, 
-body.light-theme h1 { 
-    color: #8b3ba0 !important; 
-    text-shadow: none !important; 
-}
+/* --- LIGHT MODE RULES --- */
+body.light-theme { background: #eef7ff; color: #121418; }
+body.light-theme .container { background: rgba(255, 255, 255, 0.8); }
+body.light-theme .box { background: #e2e8f0; border-color: #cbd5e1; }
+body.light-theme h1, body.light-theme h3 { color: #7b2cbf; }
+body.light-theme p { color: #334155; }
