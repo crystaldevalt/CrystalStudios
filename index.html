@@ -6,9 +6,18 @@
     <title>CrystalStudios | Development</title>
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <link rel="stylesheet" href="dark.css" id="theme-stylesheet">
+    <!-- Theme Persistence Script: Replaces the hardcoded link tag -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.write('<link rel="stylesheet" href="' + (savedTheme === 'light' ? 'light.css' : 'dark.css') + '" id="theme-stylesheet">');
+    </script>
     
     <link rel="stylesheet" href="discord.css">
+    
+    <style>
+        /* Fade transition for page loads */
+        body { transition: opacity 0.5s ease; }
+    </style>
 </head>
 <body>
 
